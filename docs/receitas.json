@@ -1,0 +1,23 @@
+[
+  {
+    "nome": "Bolo de Cenoura",
+    "preco": 0,
+    "imagem": "",
+    "descricao": "Clássico com cobertura de chocolate.",
+    "categoria": "Doces"
+  },
+  {
+    "nome": "Pão de Alho",
+    "preco": 1.99,
+    "imagem": "",
+    "descricao": "Perfeito para partilhar.",
+    "categoria": "Salgados"
+  },
+  {
+    "nome": "Limonada",
+    "preco": 0,
+    "imagem": "",
+    "descricao": "Refrescante e fácil.",
+    "categoria": "Bebidas"
+  }
+]

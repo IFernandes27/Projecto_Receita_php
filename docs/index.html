@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Estática — Projecto_Receita_php</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Demonstração visual estática do Projecto_Receita_php em GitHub Pages (sem PHP/MySQL)." />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <strong>Projecto_Receita_php</strong>
+      <nav>
+        <a href="#grid">Receitas</a>
+        <a href="https://github.com/IFernandes27/Projecto_Receita_php" target="_blank" rel="noopener">Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Demo Estática (GitHub Pages)</h1>
+      <p>Esta é uma demonstração <em>somente visual</em> do projeto. GitHub Pages não executa PHP/MySQL; por isso os dados abaixo são carregados de um <code>receitas.json</code> apenas para apresentação.</p>
+      <p class="note">Para uma demo funcional com PHP/MySQL, usa um hosting com PHP + DB e liga-o ao repositório via deploy automatizado.</p>
+    </section>
+
+    <section>
+      <h2 id="grid">Receitas</h2>
+      <div id="receitasGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> Demo visual — sem backend</small>
+    </div>
+  </footer>
+
+  <script>
+    // Carrega lista estática de receitas (apenas para demo)
+    fetch('receitas.json')
+      .then(r => r.json())
+      .then(data => {
+        const grid = document.getElementById('receitasGrid');
+        grid.innerHTML = data.map(r => `
+          <article class="card">
+            <div class="thumb">${r.imagem ? `<img src="${r.imagem}" alt="${r.nome}">` : '<div class="placeholder"></div>'}</div>
+            <div class="content">
+              <h3>${r.nome}</h3>
+              <p class="desc">${r.descricao || ''}</p>
+              <div class="meta">
+                <span class="price">${r.preco > 0 ? '€' + Number(r.preco).toFixed(2) : 'Grátis'}</span>
+                <span class="tag">${r.categoria || ''}</span>
+              </div>
+              <button class="btn" disabled title="Apenas visual — sem backend">Adicionar ao carrinho</button>
+            </div>
+          </article>
+        `).join('');
+      })
+      .catch(err => {
+        document.getElementById('receitasGrid').innerHTML = '<p>Falha ao carregar a lista de receitas.</p>';
+        console.error(err);
+      });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
