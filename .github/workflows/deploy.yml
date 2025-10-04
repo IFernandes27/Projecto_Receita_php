@@ -1,0 +1,33 @@
+name: Deploy para hospedagem (FTP)
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # (Opcional) Instalar dependências do Composer se usas vendor/
+      # - name: Composer install (prod)
+      #   uses: php-actions/composer@v6
+      #   with:
+      #     args: --no-dev --optimize-autoloader
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_REMOTE_DIR || '/public_html/' }}
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/*.sql
+            **/.env
+            **/.env.*
