@@ -2,7 +2,7 @@
 FROM php:8.2-fpm-alpine
 
 # Pacotes necessários
-RUN apk add --no-cache nginx bash curl ca-certificates \
+RUN apk add --no-cache nginx bash curl ca-certificates gettext \
     && docker-php-ext-install mysqli pdo pdo_mysql
 
 # Diretórios
