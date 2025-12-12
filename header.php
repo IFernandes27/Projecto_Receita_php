@@ -18,10 +18,10 @@ $id_tipo  = (int)($_SESSION['id_tipo'] ?? 0);
 
 
 
-// Inicia sessão (evitando múltiplos session_start)
+/* Inicia sessão (evitando múltiplos session_start)
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}
+}*/
 
 require_once 'conexao.php';
 
