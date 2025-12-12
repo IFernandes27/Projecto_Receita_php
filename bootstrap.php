@@ -1,13 +1,20 @@
 <?php
-// NADA de HTML/echo/espacos antes disto
+declare(strict_types=1);
+
+// (Opcional) Buffer para evitar “headers already sent” durante debug
+// ob_start();
+
+$secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+
+session_set_cookie_params([
+  'lifetime' => 0,
+  'path'     => '/',
+  'domain'   => '',
+  'secure'   => $secure,
+  'httponly' => true,
+  'samesite' => 'Lax',
+]);
+
 if (session_status() !== PHP_SESSION_ACTIVE) {
-  session_set_cookie_params([
-    'lifetime' => 0,                    // sessão até fechar o browser
-    'path'     => '/',
-    'domain'   => '',                   // se usas subdomínios, põe '.teudominio.tld'
-    'secure'   => !empty($_SERVER['HTTPS']),
-    'httponly' => true,
-    'samesite' => 'Lax',
-  ]);
   session_start();
 }
