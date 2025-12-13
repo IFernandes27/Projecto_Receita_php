@@ -1140,6 +1140,32 @@ footer .inner-content p a {
   transform: translateY(0);
   pointer-events: auto;
 }
+/* ================================
+   FIX FINAL: preço + botão (anti-conflito do template)
+   ================================ */
+
+/* o span do preço NÃO pode ser absoluto */
+.product-item .down-content span.pi-price{
+  position: static !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: inline-block;
+}
+
+/* evita o padding-right:100px antigo (se existir noutro css) */
+.product-item .down-content{
+  padding-right: 30px !important;
+}
+
+/* garante botão sempre a 100% e sem cortar texto */
+.product-item .down-content form{
+  width: 100%;
+}
+.product-item .down-content .add-to-cart-btn{
+  width: 100% !important;
+  display: block !important;
+  white-space: normal; /* permite quebrar linha se precisar */
+}
 
 
 
