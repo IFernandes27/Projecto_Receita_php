@@ -1066,3 +1066,78 @@ footer .inner-content p a {
   color: #fff !important; /* branco */
 }
 
+/* ================================
+   OVERRIDES PARA OS CARDS (layout do index)
+   ================================ */
+
+/* Não usar as regras antigas do template (h6/span absolutos) */
+.product-item .down-content h6,
+.product-item .down-content > span {
+  display: none !important;
+}
+
+/* Estrutura moderna do card */
+.product-item .down-content{
+  position: relative;
+  padding: 30px;
+}
+
+/* Linha: Nome à esquerda + Preço à direita */
+.product-item .down-content .pi-header-line{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .35rem;
+}
+
+/* Nome */
+.product-item .down-content .pi-title{
+  flex: 1;
+  min-width: 0;
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e1e1e;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Preço */
+.product-item .down-content .pi-price{
+  white-space: nowrap;
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* Descrição (máx 3 linhas) */
+.product-item .down-content .pi-desc{
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3em;
+  min-height: calc(1.3em * 3);
+}
+
+/* Botão: ocupa toda a largura e fica alinhado */
+.product-item .down-content .add-to-cart-btn{
+  width: 100%;
+  margin-top: .75rem;
+}
+
+/* Se quiseres o efeito "aparece só no hover" (como tinhas antes) */
+.product-item .add-to-cart-btn{
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .15s ease, transform .15s ease;
+  pointer-events: none;
+}
+.product-item:hover .add-to-cart-btn{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
