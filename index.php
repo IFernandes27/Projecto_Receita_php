@@ -155,13 +155,7 @@ $receitas = $stmt->get_result();
 
     <?php } ?>
 
-
-
-
-
-
-
-                  
+      
                 </div>
               </div>
             </div>
