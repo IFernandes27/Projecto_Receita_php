@@ -226,16 +226,16 @@ $logado = !empty($_SESSION['id_tipo']);
     .badge-brand{ background: var(--brand); color:#333; }
 
     /* Grid dos produtos */
-   /*.product-item .down-content{ position:relative; padding-right:30px; }*/
-    .product-item .down-content .pi-header-line{ display:flex; align-items:flex-start; justify-content:space-between; gap:.5rem; margin-bottom:.25rem; }
+   /*.product-item .down-content{ position:relative; padding-right:30px; }
+    .product-item .down-content .pi-header-line{ display:flex; align-items:flex-start; justify-content:space-between; gap:.5rem; margin-bottom:.25rem; }*/
     .product-item .down-content .pi-title{ flex:1; min-width:0; display:block; font-size:1.05rem; font-weight:600; color:inherit; text-decoration:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .product-item .down-content .pi-price{ white-space:nowrap; font-weight:700; color:#28a745; }
     .product-item .down-content .pi-desc{ display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; line-height:1.3em; min-height:calc(1.3em * 3); margin:0; }
     .product-item .down-content h6{ display:none !important; }
 
-    /* Botão Add to Cart só no hover e apenas quando existir */
+    /* Botão Add to Cart só no hover e apenas quando existir 
     .product-item .add-to-cart-btn{ opacity:0; transform:translateY(6px); transition:opacity .15s ease, transform .15s ease; pointer-events:none; }
-    .product-item:hover .add-to-cart-btn{ opacity:1; transform:translateY(0); pointer-events:auto; }
+    .product-item:hover .add-to-cart-btn{ opacity:1; transform:translateY(0); pointer-events:auto; }*/
 
     /* Navbar carrinho */
     .cart-badge{ position:relative; display:inline-block; }
