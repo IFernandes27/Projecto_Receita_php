@@ -245,6 +245,7 @@ $logado = !empty($_SESSION['id_tipo']);
     .dropdown-menu.cart-dropdown{ min-width:320px; }
     .cart-items .media img{ width:40px; height:40px; object-fit:cover; }
   </style>
+   <style>
 
 /* user-menu hover dropdown */
 .user-menu .dropdown-menu{display:none; margin-top:.25rem;}
