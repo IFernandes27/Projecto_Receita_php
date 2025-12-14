@@ -226,7 +226,7 @@ $logado = !empty($_SESSION['id_tipo']);
     .badge-brand{ background: var(--brand); color:#333; }
 
     /* Grid dos produtos */
-   .product-item .down-content{ position:relative; padding-right:30px; }
+   /*.product-item .down-content{ position:relative; padding-right:30px; }*/
     .product-item .down-content .pi-header-line{ display:flex; align-items:flex-start; justify-content:space-between; gap:.5rem; margin-bottom:.25rem; }
     .product-item .down-content .pi-title{ flex:1; min-width:0; display:block; font-size:1.05rem; font-weight:600; color:inherit; text-decoration:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .product-item .down-content .pi-price{ white-space:nowrap; font-weight:700; color:#28a745; }
@@ -245,7 +245,7 @@ $logado = !empty($_SESSION['id_tipo']);
     .dropdown-menu.cart-dropdown{ min-width:320px; }
     .cart-items .media img{ width:40px; height:40px; object-fit:cover; }
   </style>
-<style>
+
 /* user-menu hover dropdown */
 .user-menu .dropdown-menu{display:none; margin-top:.25rem;}
 @media (hover:hover){
