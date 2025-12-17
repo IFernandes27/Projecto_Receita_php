@@ -180,7 +180,7 @@ foreach ($cartSession as $key => $raw) {
 
 
 //vê se esta logado e guarda na variavel logado para icone da conta
-if (session_status() === PHP_SESSION_NONE) session_start();
+//if (session_status() === PHP_SESSION_NONE) session_start();
 $logado = !empty($_SESSION['id_tipo']);
 
 ?>
