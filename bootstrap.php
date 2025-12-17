@@ -1,8 +1,7 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 // (Opcional) Buffer para evitar “headers already sent” durante debug
-// ob_start();
+ob_start();
 
 $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
 

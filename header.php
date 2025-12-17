@@ -1,8 +1,4 @@
-
-<?php
-
-
-require_once 'bootstrap.php'; 
+<?php require_once 'bootstrap.php'; 
 
 
 function is_logged_in(): bool {
@@ -183,9 +179,7 @@ foreach ($cartSession as $key => $raw) {
 //if (session_status() === PHP_SESSION_NONE) session_start();
 $logado = !empty($_SESSION['id_tipo']);
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="pt-PT">
 <head>
   <meta charset="utf-8">
