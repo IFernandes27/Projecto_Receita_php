@@ -1,30 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Header -->
-  <?php include 'header.php'; ?>
-
-
-
-
-<?php
+<?php include 'header.php'; 
 
 
   if (isset($_GET['id']) && is_numeric($_GET['id'])) {
